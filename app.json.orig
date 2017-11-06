@@ -4,7 +4,11 @@
     "pages/index/index",
     "pages/mybusiness/mybusiness",
     "pages/logs/logs",
+<<<<<<< HEAD
+=======
+    "pages/businessenroll/businessenroll",
     "pages/test/test",
+>>>>>>> 4d261e12059f573d6d1170cd4793554e7c076a67
     "pages/callqueue/callqueue"
   ],
   "window": {
