@@ -1,6 +1,4 @@
 Page({
-<<<<<<< HEAD
-
   /**
    * 页面的初始数据
    */
@@ -64,9 +62,3 @@ Page({
     
   }
 })
-=======
-  onLoad: function () {
-    debugger
-  }
-})
->>>>>>> a0ff3d4241d3c9b785c1b717cd673e87fda07a0d
