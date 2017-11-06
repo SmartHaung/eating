@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/mybusiness/mybusiness",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/businessenroll/businessenroll"
   ],
   "window": {
     "backgroundTextStyle": "light",
