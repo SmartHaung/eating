@@ -3,8 +3,12 @@
     <text>{{businessName+"欢迎你"}}</text>
   </view>
 </view>
-
 <view class="section">
-  <input placeholder="请输入订单号" auto-focus/>
+  <input placeholder="请输入订单号" bindinput="orderInput" auto-focus></input>
 </view>
-<button type="primary" bindtap="primary"> 提交 </button>
+<form bindsubmit="formSubmit" bindreset="formReset" report-submit="true">
+  <view class="btn-area">
+    <button type="primary"  formType="submit"> 提交 </button>
+    <button type="primary"  formType="submit"> 提交 </button>
+  </view>
+</form>
