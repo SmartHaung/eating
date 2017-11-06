@@ -4,5 +4,9 @@
       <view class="section__title">商家名称</view>
       <input name="businessInfoName" placeholder="这里输入商家名称" />
     </view>
+    <view class="btn-area">
+    <button formType="submit">注册</button>
+    <!-- <button formType="reset">Reset</button> -->
+  </view>
   </form>
 </view>

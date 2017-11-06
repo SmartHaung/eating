@@ -14,6 +14,21 @@ Page({
     businessInfo.businessInfoCreateUserUnionId = userInfo.unionId
     wx.request({
       url: backendUrl +"/business/create",
+      data: businessInfo,
+      success: function(res) {
+        console.log(res.data)
+        var title = ""
+        if (data.result == 1){
+          title = "注册成功"
+        } else {
+          title = "注册失败"
+        }
+        wx.showToast({
+          title: title,
+          icon: 'success',
+          duration: 2000
+        })
+      }
     })
   },
 
