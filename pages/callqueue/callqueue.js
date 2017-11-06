@@ -10,6 +10,13 @@ Page({
       businessUniqueId: options.businessUniqueId,
     })
     wx.request({
+      url: 'https://www.huangwenbin.xin/business/queryBusinessInfo',
+      data: {
+        businessId: 2,
+      },
+      success: function (res) {
+        debugger
+      }
     })
   }
 })
