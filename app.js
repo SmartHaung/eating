@@ -34,6 +34,7 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    backendUrl: "https://www.huangwenbin.xin"
   }
 })
