@@ -5,11 +5,11 @@
     "pages/mybusiness/mybusiness",
     "pages/logs/logs",
 <<<<<<< HEAD
-    "pages/businessenroll/businessenroll"
 =======
+    "pages/businessenroll/businessenroll",
     "pages/test/test",
+>>>>>>> 4d261e12059f573d6d1170cd4793554e7c076a67
     "pages/callqueue/callqueue"
->>>>>>> a0ff3d4241d3c9b785c1b717cd673e87fda07a0d
   ],
   "window": {
     "backgroundTextStyle": "light",
