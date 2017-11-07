@@ -23,6 +23,6 @@
 </form>
 <view class="flex-row" style="display:flex;">
   <view class="flex-view-item">
-    <text style='color:red'>提示：受消息微信机制限制，默认只能推送一次通知，若订单内容较多或需要多次提示，请点击上方+按钮调整通知次数，带来不便敬请谅解！</text>
+    <text style='color:red'>提示：受消息微信机制限制，默认只能推送一次通知，若订单内容较多或需要多次通知，请点击上方+按钮调整通知次数，带来不便敬请谅解！</text>
   </view>
 </view>
