@@ -1,6 +1,3 @@
-var userInfo = getApp().globalData.userInfo
-var globalData = getApp().globalData
-var backendUrl = getApp().globalData.backendUrl
 App({
   onLaunch: function () {
     // 展示本地存储能力
