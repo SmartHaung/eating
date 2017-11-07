@@ -14,6 +14,7 @@ Page({
     businessInfo.businessInfoCreateUserUnionId = userInfo.unionId
     wx.request({
       url: backendUrl +"/business/create",
+      method: "POST",
       data: businessInfo,
       success: function(res) {
         console.log(res.data)

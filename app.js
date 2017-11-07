@@ -10,6 +10,13 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
+        wx.request({
+          url: this.globalData.backendUrl+"/wechat/getunionid",
+          data: {code: res},
+          success: r => {
+            this.globalData.unionId = r.data
+          }
+        })
       }
     })
     // 获取用户信息
@@ -20,6 +27,7 @@ App({
           wx.getUserInfo({
             success: res => {
               // 可以将 res 发送给后台解码出 unionId
+              res.userInfo.unionId = this.globalData.unionId
               this.globalData.userInfo = res.userInfo
 
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
