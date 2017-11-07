@@ -1,35 +1,37 @@
+var userInfo = getApp().globalData.userInfo
+var backendUrl = getApp().globalData.backendUrl
 Page({
   data: {
     listData: [
-      { "callqueueOrderid": "01", "text": "text1", "type": "type1" },
-      { "callqueueOrderid": "02", "text": "text2", "type": "type2" },
-      { "callqueueOrderid": "03", "text": "text3", "type": "type3" },
-      { "callqueueOrderid": "04", "text": "text4", "type": "type4" },
-      { "callqueueOrderid": "05", "text": "text5", "type": "type5" },
-      { "callqueueOrderid": "06", "text": "text6", "type": "type6" },
-      { "callqueueOrderid": "01", "text": "text1", "type": "type1" },
-      { "callqueueOrderid": "02", "text": "text2", "type": "type2" },
-      { "callqueueOrderid": "03", "text": "text3", "type": "type3" },
-      { "callqueueOrderid": "04", "text": "text4", "type": "type4" },
-      { "callqueueOrderid": "05", "text": "text5", "type": "type5" },
-      { "callqueueOrderid": "06", "text": "text6", "type": "type6" },
-      { "callqueueOrderid": "01", "text": "text1", "type": "type1" },
-      { "callqueueOrderid": "02", "text": "text2", "type": "type2" },
-      { "callqueueOrderid": "03", "text": "text3", "type": "type3" },
-      { "callqueueOrderid": "04", "text": "text4", "type": "type4" },
-      { "callqueueOrderid": "05", "text": "text5", "type": "type5" },
-      { "callqueueOrderid": "06", "text": "text6", "type": "type6" },
-      { "callqueueOrderid": "01", "text": "text1", "type": "type1" },
-      { "callqueueOrderid": "02", "text": "text2", "type": "type2" },
-      { "callqueueOrderid": "03", "text": "text3", "type": "type3" },
-      { "callqueueOrderid": "04", "text": "text4", "type": "type4" },
-      { "callqueueOrderid": "05", "text": "text5", "type": "type5" },
-      { "callqueueOrderid": "06", "text": "text6", "type": "type6" },
-      { "callqueueOrderid": "07", "text": "text7", "type": "type7" }
     ]
   },
-  onLoad: function () {
-    console.log('onLoad')
+  onLoad: function (options) {
+    var requestData = {};
+    if (options.businessId) {
+      requestData.callqueueBusinessId = options.businessId;
+    }
+    if (options.userUnionid) {
+      requestData.callqueueCreateuserUnionid = options.userUnionid;
+    }
+    var that = this;
+    debugger;
+    wx.request({
+      url: backendUrl + '/callqueue/queryCallQueueList',
+      data: {
+        callqueueBusinessId: options.businessId
+      },
+      success: function (res) {
+        var title = ""
+        if (res && res.data && res.data.code == 1) {
+          that.setData({ listData: res.data.data })
+        } else {
+          wx.showToast({
+            title: "查询失败",
+            icon: 'success',
+            duration: 2000
+          })
+        }
+      }
+    })
   }
-
 })
