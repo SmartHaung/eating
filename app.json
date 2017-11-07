@@ -6,7 +6,8 @@
     "pages/logs/logs",
     "pages/callqueue/callqueue",
     "pages/businessadmin/businessadmin",
-    "pages/wxacode/wxacode"
+    "pages/wxacode/wxacode",
+    "pages/callqueuelist/callqueuelist"
   ],
   "window": {
     "backgroundTextStyle": "light",

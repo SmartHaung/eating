@@ -1,8 +1,8 @@
 <view class="container">
   <navigator open-type='navigate' url='../callqueue/callqueue?businessId=2&businessUniqueId=dc30c483-c03c-11e7-bcc9-00163e0a7235'>
-   for transaction test
+    for transaction test
   </navigator>
-
   <navigator open-type='navigate' url='../mybusiness/mybusiness'>商家管理测试</navigator>
+  <navigator open-type='navigate' url='../callqueue/callqueue?businessId=2&businessUniqueId=dc30c483-c03c-11e7-bcc9-00163e0a7235'>客户叫号</navigator>
+  <navigator open-type='navigate' url='../callqueuelist/callqueuelist'>叫号列表</navigator>
 </view>
-
