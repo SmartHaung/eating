@@ -1,5 +1,6 @@
-var userInfo = getApp().globalData.userInfo
-var backendUrl = getApp().globalData.backendUrl
+//index.js
+//获取应用实例
+const app = getApp()
 
 Page({
   /**
