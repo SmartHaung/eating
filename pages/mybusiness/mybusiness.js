@@ -6,8 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    busiArray:[{businessInfoName:"1111"},
-                {businessInfoName:"2222"}]
+    busiArray:null
   },
 
   /**
@@ -15,17 +14,17 @@ Page({
    */
   onLoad: function (options) {
     var that = this
-    // wx.request({
-    //   url: backendUrl +"/business/list",
-    //   data: { unionid: userInfo.unionId},
-    //   success: res => {
-    //     if (res.data.result == 1) {
-    //       that.setData({
-    //         busiArray: res.data.data
-    //       })
-    //     }
-    //   }
-    // })
+    wx.request({
+      url: backendUrl +"/business/businessadminbyunionId",
+      data: { unionid: userInfo.unionId},
+      success: res => {
+        if (res.data.result == 1) {
+          that.setData({
+            busiArray: res.data.data
+          })
+        }
+      }
+    })
   },
 
   /**

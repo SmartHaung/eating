@@ -10,10 +10,11 @@ App({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         wx.request({
-          url: backendUrl+"/wechat/getunionid",
+          url: this.globalData.backendUrl+"/wechat/getunionid",
           data: {code: res},
           success: r => {
-            globalData.unionId = r.data
+            this.globalData.unionId = r.data.unionId
+            this.globalData.openId = r.data.openId
           }
         })
       }
@@ -26,8 +27,9 @@ App({
           wx.getUserInfo({
             success: res => {
               // 可以将 res 发送给后台解码出 unionId
-              res.userInfo.unionId = userInfo.unionId
-              globalData.userInfo = res.userInfo
+              res.userInfo.unionId = this.globalData.unionId
+              res.userInfo.openId = this.globalData.openId
+              this.globalData.userInfo = res.userInfo
 
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况
@@ -42,6 +44,8 @@ App({
   },
   globalData: {
     userInfo: null,
+    unionId: null,
+    openId:null,
     backendUrl: "https://www.huangwenbin.xin"
   }
 })

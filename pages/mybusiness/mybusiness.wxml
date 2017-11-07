@@ -1,8 +1,8 @@
 <view class='container'>
-  <view wx:for="{{busiArray}}" wx:for-index="idx" wx:for-item="business">
-    <text>{{business.businessInfoName}}</text>
+  <view wx:for="{{busiArray}}" wx:for-index="idx" wx:for-item="item">
+    <text>{{item.businessInfoEntity.businessInfoName}}</text>
     <button type='primary'> 进入 </button>
-    <view wx:if="true">
+    <view wx:if="{{item.businessAdminRole==1}}">
       <button type="primary" size="mini" bindtap='toWxacode'> 二维码 </button>
       <button type="primary" size="mini"> 店员管理 </button>
     </view>
