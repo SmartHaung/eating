@@ -1,14 +1,28 @@
-<view class="btn-area">
-  <view class="body-view">
+<view class="flex-row" style="display:flex;">
+  <view class="flex-view-item">
     <text>{{businessName+"欢迎你"}}</text>
   </view>
 </view>
-<view class="section">
-  <input placeholder="请输入订单号" bindinput="orderInput" auto-focus></input>
+<view class="flex-row" style="display:flex;">
+  <view class="flex-view-item">
+    <input placeholder="请输入订单号" bindinput="orderInput" auto-focus></input>
+  </view>
 </view>
 <form bindsubmit="formSubmit" bindreset="formReset" report-submit="true">
-  <view class="btn-area">
-    <button type="primary"  formType="submit"> 提交 </button>
-    <button type="primary"  formType="submit"> 提交 </button>
+  <view class="flex-row" style="display:flex;">
+    <view class="flex-view-item">
+      <button size="mini" type="primary" bindtap='createCallQueue' formType="submit">提交 </button>
+    </view>
+    <view class="flex-view-item">
+      <label>当前可通知次数：{{noticeCount}}</label>
+    </view>
+    <view class="flex-view-item">
+      <button size="mini" type="warn" formType="submit">+ </button>
+    </view>
   </view>
 </form>
+<view class="flex-row" style="display:flex;">
+  <view class="flex-view-item">
+    <text style='color:red'>提示：受消息微信机制限制，默认只能推送一次通知，若订单内容较多或需要多次提示，请点击上方+按钮调整通知次数，带来不便敬请谅解！</text>
+  </view>
+</view>

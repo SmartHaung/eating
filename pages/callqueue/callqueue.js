@@ -6,7 +6,8 @@ Page({
     businessId: "",
     businessUniqueId: "",
     orderId: "",
-    callqueueFormids: ""
+    callqueueFormids: "",
+    noticeCount: 1
   },
   orderInput: function (e) {
     this.setData({
@@ -14,19 +15,19 @@ Page({
     })
   },
   formSubmit: function (e) {
-    this.callqueueFormids += e.detail.formId + ","
+    this.data.callqueueFormids += e.detail.formId + ",";
+    debugger
+    this.data.noticeCount++;
+    this.setData({ noticeCount: this.data.noticeCount })
   },
   createCallQueue: function () {
-    for (var i = 0; i < 10; i++) {
-      this.formSubmit();
-    }
     wx.request({
       url: backendUrl + '/consumer/addcallrequest',
       data: {
-        callqueueBusinessId: this.businessId,
-        callqueueOrderid: this.orderId,
+        callqueueBusinessId: this.data.businessId,
+        callqueueOrderid: this.data.orderId,
         callqueueCreateuserUnionid: "1111",
-        callqueueFormids: this.callqueueFormids
+        callqueueFormids: this.data.callqueueFormids
       },
       success: function (res) {
         var title = ""
