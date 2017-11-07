@@ -1,2 +1,8 @@
-<!--pages/test/test.wxml-->
-<text>pages/test/test.wxml</text>
+<view class="container">
+  <navigator open-type='navigate' url='../callqueue/callqueue?businessId=2&businessUniqueId=dc30c483-c03c-11e7-bcc9-00163e0a7235'>
+   for transaction test
+  </navigator>
+
+  <navigator open-type='navigate' url='../mybusiness/mybusiness'>商家管理测试</navigator>
+</view>
+

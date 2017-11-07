@@ -1,42 +1,21 @@
 var userInfo = getApp().globalData.userInfo
 var backendUrl = getApp().globalData.backendUrl
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    
-  },
-
-  enroll: function(e) {
-    var businessInfo = e.detail.value
-    businessInfo.businessInfoCreateUserUnionId = userInfo.unionId
-    wx.request({
-      url: backendUrl +"/business/create",
-      method: "POST",
-      data: businessInfo,
-      success: function(res) {
-        console.log(res.data)
-        var title = ""
-        if (res.data.result == 1){
-          title = "注册成功"
-        } else {
-          title = "注册失败"
-        }
-        wx.showToast({
-          title: title,
-          duration: 2000
-        })
-      }
-    })
+    queue: "",
+    business: ""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    
   },
 
   /**

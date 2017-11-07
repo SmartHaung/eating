@@ -4,7 +4,9 @@
     "pages/index/index",
     "pages/mybusiness/mybusiness",
     "pages/logs/logs",
-    "pages/callqueue/callqueue"
+    "pages/callqueue/callqueue",
+    "pages/businessadmin/businessadmin",
+    "pages/wxacode/wxacode"
   ],
   "window": {
     "backgroundTextStyle": "light",

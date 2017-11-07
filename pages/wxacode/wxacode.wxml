@@ -1,0 +1,4 @@
+<view class='container'>
+  <image src='{{queue}}'>顾客扫描二维码</image>
+  <image src='{{business}}'>添加店员二维码</image>
+</view>

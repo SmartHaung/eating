@@ -1,16 +1,31 @@
+var userInfo = getApp().globalData.userInfo
+var backendUrl = getApp().globalData.backendUrl
+
 Page({
   /**
    * 页面的初始数据
    */
   data: {
-    
+    busiArray:[{businessInfoName:"1111"},
+                {businessInfoName:"2222"}]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    var that = this
+    // wx.request({
+    //   url: backendUrl +"/business/list",
+    //   data: { unionid: userInfo.unionId},
+    //   success: res => {
+    //     if (res.data.result == 1) {
+    //       that.setData({
+    //         busiArray: res.data.data
+    //       })
+    //     }
+    //   }
+    // })
   },
 
   /**
