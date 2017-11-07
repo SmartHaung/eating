@@ -1,4 +1,4 @@
-<view class="flex-row tr" style="display:flex;">
+<view class="flex-row tr" style="display:flex;" wx:if="{{isBusiness}}">
   <view class="flex-view-item">
     快捷叫号：
   </view>
@@ -11,24 +11,24 @@
 </view>
 <view class="table">
   <view class="tr bg-w">
-    <view class="th">订单号</view>
-    <view class="th">操作</view>
+    <view class="th" style='width:40%'>订单号</view>
+    <view class="th" style='width:60%'>操作</view>
   </view>
   <block wx:for="{{listData}}" wx:key="{{callqueueOrderid}}">
     <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
-      <view class="td">{{item.callqueueOrderid}}</view>
-      <view class="td">
-        <button size="mini" type="default">部分 </button>
-        <button size="mini" type="primary">完成 </button>
-        <button size="mini" type="warn">取消 </button>
+      <view class="td" style='width:40%'>{{item.callqueueOrderid}}</view>
+      <view class="td" style='width:60%'>
+        <button size="mini" type="default" bindtap='updateCallqueue' data-type="2" data-orderid="{{item.callqueueOrderid}}" wx:if="{{isBusiness}}">部分 </button>
+        <button size="mini" type="primary" bindtap='updateCallqueue' data-type="3" data-orderid="{{item.callqueueOrderid}}" wx:if="{{isBusiness}}">完成 </button>
+        <button size="mini" type="warn" bindtap='updateCallqueue' data-type="3" data-orderid="{{item.callqueueOrderid}}">取消 </button>
       </view>
     </view>
     <view class="tr" wx:else>
-      <view class="td">{{item.callqueueOrderid}}</view>
-      <view class="td">
-        <button size="mini" type="default">部分 </button>
-        <button size="mini" type="primary">完成 </button>
-        <button size="mini" type="warn">取消 </button>
+      <view class="td" style='width:40%'>{{item.callqueueOrderid}}</view>
+      <view class="td" style='width:60%'>
+        <button size="mini" type="default" bindtap='updateCallqueue' data-type="2" data-orderid="{{item.callqueueOrderid}}" wx:if="{{isBusiness}}">部分 </button>
+        <button size="mini" type="primary" bindtap='updateCallqueue' data-type="3" data-orderid="{{item.callqueueOrderid}}" wx:if="{{isBusiness}}">完成 </button>
+        <button size="mini" type="warn" bindtap='updateCallqueue' data-type="3" data-orderid="{{item.callqueueOrderid}}">取消 </button>
       </view>
     </view>
   </block>

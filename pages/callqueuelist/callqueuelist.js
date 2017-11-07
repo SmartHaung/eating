@@ -4,23 +4,25 @@ const app = getApp()
 Page({
   data: {
     listData: [
-    ]
+    ],
+    isBusiness: false,
+    isCustomer: false
   },
   onLoad: function (options) {
+    var backendUrl = getApp().globalData.backendUrl
     var requestData = {};
     if (options.businessId) {
       requestData.callqueueBusinessId = options.businessId;
+      this.setData({ isBusiness: true });
     }
-    if (options.userUnionid) {
-      requestData.callqueueCreateuserUnionid = options.userUnionid;
+    else {
+      requestData.callqueueCreateuserUnionid = getApp().globalData.unionId;
+      this.setData({ isCustomer: true });
     }
     var that = this;
-    debugger;
     wx.request({
       url: backendUrl + '/callqueue/queryCallQueueList',
-      data: {
-        callqueueBusinessId: options.businessId
-      },
+      data: requestData,
       success: function (res) {
         var title = ""
         if (res && res.data && res.data.code == 1) {
@@ -34,5 +36,9 @@ Page({
         }
       }
     })
+  },
+  updateCallqueue: function (event) {
+
+    
   }
 })
