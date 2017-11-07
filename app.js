@@ -1,4 +1,6 @@
-//app.js
+var userInfo = getApp().globalData.userInfo
+var globalData = getApp().globalData
+var backendUrl = getApp().globalData.backendUrl
 App({
   onLaunch: function () {
     // 展示本地存储能力
@@ -11,10 +13,10 @@ App({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         wx.request({
-          url: this.globalData.backendUrl+"/wechat/getunionid",
+          url: backendUrl+"/wechat/getunionid",
           data: {code: res},
           success: r => {
-            this.globalData.unionId = r.data
+            globalData.unionId = r.data
           }
         })
       }
@@ -27,8 +29,8 @@ App({
           wx.getUserInfo({
             success: res => {
               // 可以将 res 发送给后台解码出 unionId
-              res.userInfo.unionId = this.globalData.unionId
-              this.globalData.userInfo = res.userInfo
+              res.userInfo.unionId = userInfo.unionId
+              globalData.userInfo = res.userInfo
 
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况
