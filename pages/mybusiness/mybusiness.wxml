@@ -1,4 +1,4 @@
-<form bindsubmit='enroll'>
+<form bindsubmit='enroll' wx:if="{{!(busiArray&&busiArray.length>=5)}}">
   <view class="flex-row tr" style="display:flex;">
     <view class="flex-view-item">
       商家注册：
@@ -34,4 +34,9 @@
       </view>
     </view>
   </block>
+</view>
+<view class="flex-row tr" style="display:flex;">
+  <view class="flex-view-item">
+    提示：个人最多可管理5个门店
+  </view>
 </view>

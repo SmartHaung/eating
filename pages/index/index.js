@@ -13,17 +13,25 @@ Page({
         } else if (sceneArray[0] == "bus") {
 
         }
-        else {
 
-        }
-      } else {
-        wx.navigateTo({
-          url: '../test/test'
-        })
       }
     }
-    wx.navigateTo({
-      url: '../test/test'
+    wx.showModal({
+      title: '欢迎',
+      content: '请选择你的身份',
+      cancelText: '我是店家',
+      confirmText: '我是顾客',
+      success: function (res) {
+        if (res.confirm) {
+          wx.navigateTo({
+            url: '../callqueuelist/callqueuelist'
+          })
+        } else if (res.cancel) {
+          wx.navigateTo({
+            url: '../mybusiness/mybusiness'
+          })
+        }
+      }
     })
   }
 })
