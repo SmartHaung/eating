@@ -3,10 +3,11 @@
     "pages/test/test",
     "pages/index/index",
     "pages/mybusiness/mybusiness",
-    "pages/logs/logs",
-    "pages/callqueue/callqueue",
+    "pages/businessenroll/businessenroll",
     "pages/businessadmin/businessadmin",
     "pages/wxacode/wxacode",
+    "pages/logs/logs",
+    "pages/callqueue/callqueue",
     "pages/callqueuelist/callqueuelist"
   ],
   "window": {

@@ -1,2 +1,8 @@
-<!--pages/businessadmin/businessadmin.wxml-->
-<text>pages/businessadmin/businessadmin.wxml</text>
+<view class='container'>
+  <view wx:for="{{adminArray}}" wx:for-index="idx" wx:for-item="item">
+    <button type="warn" size="mini" bindlongpress='deleteAdmin'
+      data-admin-id='{{item.businessAdminId}}'>
+      删除
+    </button>
+  </view>
+</view>
