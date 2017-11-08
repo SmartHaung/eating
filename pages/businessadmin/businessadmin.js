@@ -8,19 +8,41 @@ Page({
    * 页面的初始数据
    */
   data: {
-    adminArray:null
+    adminArray:null,
+    businessId:null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-     
+    var that = this
+    var businessUniqueid = options.businessUniqueid
+    var businessId = options.businessId
+    this.businessId = businessId
+    wx.request({
+      url: backendUrl +"/business/queryAdminList",
+      method: "GET",
+      data: { businessId: businessId},
+      success: res => {
+        if (res.data.code == 1) {
+          that.setData({
+            adminArray: res.data.data
+          })
+        }
+      }
+    })
   },
 
-  deleteAdmin: event => {
+  deleteAdmin: function (event) {
+    debugger
+    var that = this
     var businessAdminId = event.currentTarget.dataset.adminId
     var businessAdminStatus = 2
+    var p = {
+      businessAdminId: businessAdminId,
+      businessAdminStatus: businessAdminStatus
+    }
     wx.showModal({
       title: '确认删除',
       content: '',
@@ -33,15 +55,36 @@ Page({
             data: p,
             success: res => {
               if (res.data.code == 1) {
-                wx.showToast({
-                  title: "删除成功",
-                  icon: 'success'
+
+                /**
+                 * 重新获取管理员
+                 */
+                wx.request({
+                  url: backendUrl + "/business/queryAdminList",
+                  method: "GET",
+                  data: { businessId: that.businessId },
+                  success: res => {
+                    debugger
+                    if (res.data.code == 1) {
+                      that.setData({
+                        adminArray: res.data.data
+                      })
+                    }
+                  }
                 })
               }
             }
           })
         }
       }
+    })
+  },
+
+  deleteBusiness: event => {
+    var businessId = this.businessId
+    wx.showModal({
+      title: '',
+      content: '',
     })
   },
 

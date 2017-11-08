@@ -1,8 +1,13 @@
 <view class='container'>
-  <view wx:for="{{adminArray}}" wx:for-index="idx" wx:for-item="item">
+  <view wx:for="{{adminArray}}" wx:for-index="idx" wx:for-item="item" wx:if="{{item.businessAdminRole==2 && item.businessAdminStatus==1}}">
+    <text>{{item.businessAdminNickname}}</text>
     <button type="warn" size="mini" bindlongpress='deleteAdmin'
       data-admin-id='{{item.businessAdminId}}'>
       删除
     </button>
   </view>
+  <view>
+    <button type='warn' size='default' bindlongpress="deleteBusiness">删除门店</button>
+  </view>
+  <text>长按进行删除操作</text>
 </view>
