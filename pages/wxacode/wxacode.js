@@ -33,7 +33,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var suffix = options.businessUniqueid + options.businessId
+    var suffix = options.businessUniqueid + "_" + options.businessId
     var queue = "que_" + suffix
     var business = "bus_" + suffix
     this.setData({
