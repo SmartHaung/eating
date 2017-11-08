@@ -1,4 +1,5 @@
 var backendUrl = getApp().globalData.backendUrl
+var user = getApp().globalData
 //index.js
 //获取应用实例
 const app = getApp()
@@ -29,9 +30,9 @@ Page({
       data: {
         callqueueBusinessId: this.data.businessId,
         callqueueOrderid: this.data.orderId,
-        callqueueCreateuserUnionid: "1111",
+        callqueueCreateuserUnionid: user.unionId,
         callqueueFormids: this.data.callqueueFormids,
-        callqueueCreateuserOpenid: "1111",
+        callqueueCreateuserOpenid: user.openId,
         businessUniqueId: this.data.businessUniqueId
       },
       success: function (res) {
