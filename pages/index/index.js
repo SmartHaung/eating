@@ -1,54 +1,59 @@
 //index.js
 //获取应用实例
 const app = getApp()
+const backendUrl = app.globalData.backendUrl
+var user = getApp().globalData
 
 Page({
-  data: {
-    motto: 'Hello World',
-    userInfo: {},
-    hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
-  },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
-  },
-  onLoad: function () {
-    if (app.globalData.userInfo) {
-      this.setData({
-        userInfo: app.globalData.userInfo,
-        hasUserInfo: true
-      })
-    } else if (this.data.canIUse){
-      // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-      // 所以此处加入 callback 以防止这种情况
-      app.userInfoReadyCallback = res => {
-        this.setData({
-          userInfo: res.userInfo,
-          hasUserInfo: true
-        })
-      }
-    } else {
-      // 在没有 open-type=getUserInfo 版本的兼容处理
-      wx.getUserInfo({
-        success: res => {
-          app.globalData.userInfo = res.userInfo
-          this.setData({
-            userInfo: res.userInfo,
-            hasUserInfo: true
+  onLoad: function (options) {
+    var scene = decodeURIComponent(options.scene)
+    if (scene) {
+      var sceneArray = scene.split("_");
+      if (scene && scene.length >= 3) {
+        if (sceneArray[0] == "que") {
+          wx.navigateTo({
+            url: '../callqueue/callqueue?businessId=' + sceneArray[2] + '&businessUniqueId=' + sceneArray[1]
+          })
+        } else if (sceneArray[0] == "bus") {
+          wx.request({
+            url: backendUrl + '/business/adminadd',
+            data: { businessAdminBusinessid: sceneArray[2], businessAdminRole: 2, businessAdminUnionid: user.unionId },
+            success: function (res) {
+              if (res && res.data && res.data.code == 1) {
+                wx.navigateTo({
+                  url: '../mybusiness/mybusiness'
+                })
+              } else {
+                wx.showToast({
+                  title: "添加管理员失败",
+                  icon: 'success',
+                  duration: 2000
+                })
+              }
+            }
+          })
+          wx.navigateTo({
+            url: '../mybusiness/mybusiness'
           })
         }
-      })
+      }
     }
-  },
-  getUserInfo: function(e) {
-    console.log(e)
-    app.globalData.userInfo = e.detail.userInfo
-    this.setData({
-      userInfo: e.detail.userInfo,
-      hasUserInfo: true
+    wx.showModal({
+      title: '欢迎',
+      content: '请选择你的身份',
+      cancelText: '我是店家',
+      confirmText: '我是顾客',
+      success: function (res) {
+        if (res.confirm) {
+          wx.navigateTo({
+            url: '../callqueuelist/callqueuelist'
+          })
+        } else if (res.cancel) {
+          wx.navigateTo({
+            url: '../mybusiness/mybusiness'
+          })
+        }
+      }
     })
   }
 })
