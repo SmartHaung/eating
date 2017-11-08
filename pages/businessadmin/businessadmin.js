@@ -19,7 +19,9 @@ Page({
     var that = this
     var businessUniqueid = options.businessUniqueid
     var businessId = options.businessId
-    this.businessId = businessId
+    this.setData({
+      businessId: businessId
+    })
     wx.request({
       url: backendUrl +"/business/queryAdminList",
       method: "GET",
@@ -35,7 +37,6 @@ Page({
   },
 
   deleteAdmin: function (event) {
-    debugger
     var that = this
     var businessAdminId = event.currentTarget.dataset.adminId
     var businessAdminStatus = 2
@@ -51,7 +52,7 @@ Page({
           wx.request({
             url: backendUrl +"/business/updateBusinessAdmin",
             method: "POST",
-            header: {"content-type":"application/x-www-form-urlencoded"},
+            header: { 'content-type':"application/x-www-form-urlencoded"},
             data: p,
             success: res => {
               if (res.data.code == 1) {
@@ -80,11 +81,31 @@ Page({
     })
   },
 
-  deleteBusiness: event => {
-    var businessId = this.businessId
+  deleteBusiness: function(event) {
+    var businessId = this.data.businessId
+    var p = {
+      businessInfoStatus:2,
+      businessInfoId: businessId
+    }
     wx.showModal({
-      title: '',
+      title: '确认删除',
       content: '',
+      success: res => {
+        if (res.confirm) {
+          wx.request({
+            url: backendUrl+"/business/update",
+            method: "POST",
+            data: p,
+            header:{"content-type":"application/x-www-form-urlencoded"},
+            success: res => {
+              console.log(this)
+              wx.navigateBack({
+                delta:1
+              })
+            }
+          })
+        }
+      }
     })
   },
 

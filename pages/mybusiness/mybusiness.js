@@ -16,7 +16,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(getApp())
     var that = this
     wx.request({
       url: backendUrl + "/business/businessadminbyunionId",
@@ -43,7 +42,7 @@ Page({
   },
 
   /**
-   * 门店管理员
+   * 门店管理
    */
   toAdmin: event => {
     var businessId = event.currentTarget.dataset.businessId
@@ -54,7 +53,7 @@ Page({
   },
 
   /**
-   * 去排队页面
+   * 去排队页
    */
   toCallqueuelist: event => {
     var businessId = event.currentTarget.dataset.businessId
@@ -125,7 +124,18 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var that = this
+    wx.request({
+      url: backendUrl + "/business/businessadminbyunionId",
+      data: { unionId: app.globalData.unionId },
+      success: res => {
+        if (res.data.code == 1) {
+          that.setData({
+            busiArray: res.data.data
+          })
+        }
+      }
+    })
   },
 
   /**
