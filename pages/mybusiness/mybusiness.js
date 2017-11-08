@@ -6,7 +6,7 @@ const util = require("../../utils/util.js")
 
 Page({
   /**
-   * 页面的初始数�
+   * 页面的初始数据
    */
   data: {
     busiArray: null
@@ -31,7 +31,7 @@ Page({
   },
 
   /**
-   * 前往查看二维码页�
+   * 前往查看二维码页面
    */
   toWxacode: event => {
     var businessId = event.currentTarget.dataset.businessId
@@ -42,7 +42,7 @@ Page({
   },
 
   /**
-   * 门店管理�
+   * 门店管理
    */
   toAdmin: event => {
     var businessId = event.currentTarget.dataset.businessId
@@ -53,7 +53,7 @@ Page({
   },
 
   /**
-   * 去排队页�
+   * 去排队页
    */
   toCallqueuelist: event => {
     var businessId = event.currentTarget.dataset.businessId
@@ -69,7 +69,7 @@ Page({
     var notEmpty = util.isNotEmpty(businessInfo.businessInfoName)
     if (!notEmpty) {
       wx.showModal({
-        title: "请填写商店名�,
+        title: "请填写商店名称",
         showCancel: false
       })
       return false
@@ -160,14 +160,14 @@ Page({
   },
 
   /**
-   * 页面上拉触底事件的处理函�
+   * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
 
   },
 
   /**
-   * 用户点击右上角分�
+   * 用户点击右上角分享
    */
   onShareAppMessage: function () {
 
