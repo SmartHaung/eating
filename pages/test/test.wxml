@@ -3,4 +3,5 @@
   <navigator open-type='navigate' url='../callqueue/callqueue?businessId=2&businessUniqueId=dc30c'>客户叫号</navigator>
   <navigator open-type='navigate' url='../callqueuelist/callqueuelist?businessId=2'>商家叫号列表</navigator>
   <navigator open-type='navigate' url='../callqueuelist/callqueuelist'>用户叫号列表</navigator>
+  <navigator open-type='navigate' url='../index/index?scene='></navigator>
 </view>

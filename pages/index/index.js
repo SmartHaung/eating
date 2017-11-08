@@ -2,7 +2,7 @@
 //获取应用实例
 const app = getApp()
 const backendUrl = app.globalData.backendUrl
-var user = getApp().globalData
+var globaldata = getApp().globalData
 
 Page({
   onLoad: function (options) {
@@ -17,7 +17,7 @@ Page({
         } else if (sceneArray[0] == "bus") {
           wx.request({
             url: backendUrl + '/business/adminadd',
-            data: { businessAdminBusinessid: sceneArray[2], businessAdminRole: 2, businessAdminUnionid: user.unionId },
+            data: { businessAdminBusinessid: sceneArray[2], businessAdminRole: 2, businessAdminUnionid: globaldata.unionId },
             success: function (res) {
               if (res && res.data && res.data.code == 1) {
                 wx.navigateTo({
