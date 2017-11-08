@@ -1,6 +1,9 @@
 //index.js
 //获取应用实例
 const app = getApp()
+const backendUrl = app.globalData.backendUrl
+
+const util = require("../../utils/util.js")
 Page({
 
   /**
@@ -12,22 +15,38 @@ Page({
 
   enroll: function(e) {
     var businessInfo = e.detail.value
-    businessInfo.businessInfoCreateUserUnionId = userInfo.unionId
+    var notEmpty = util.isNotEmpty(businessInfo.businessInfoName)
+    if (!notEmpty) {
+      wx.showModal({
+        title: "请填写商店名称",
+        showCancel: false
+      })
+      return false
+    }
+    businessInfo.businessInfoCreateUserUnionId = app.globalData.unionId
     wx.request({
       url: backendUrl +"/business/create",
       method: "POST",
+      header: { 'content-type':"application/x-www-form-urlencoded"},
       data: businessInfo,
       success: function(res) {
         console.log(res.data)
         var title = ""
-        if (res.data.result == 1){
+        if (res.data.code == 1){
           title = "注册成功"
         } else {
           title = "注册失败"
         }
-        wx.showToast({
+        wx.showModal({
           title: title,
-          duration: 2000
+          showCancel: false,
+          complete: () => {
+            if (res.data.code == 1) {
+              wx.redirectTo({
+                url: '../mybusiness/mybusiness',
+              })
+            }
+          }
         })
       }
     })

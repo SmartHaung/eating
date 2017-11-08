@@ -1,6 +1,7 @@
 //index.js
 //获取应用实例
 const app = getApp()
+const backendUrl = app.globalData.backendUrl
 
 Page({
 
@@ -16,7 +17,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    var suffix = options.businessUniqueid + options.businessId
+    var queue = "que_" + suffix
+    var business = "bus_" + suffix
+    this.setData({
+      queue: backendUrl+"/picture/"+queue,
+      business: backendUrl + "/picture/" + business
+    })
   },
 
   /**

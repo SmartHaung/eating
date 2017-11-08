@@ -1,21 +1,48 @@
 //index.js
 //获取应用实例
 const app = getApp()
-
+const backendUrl = app.globalData.backendUrl
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    adminArray:null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    
+  },
+
+  deleteAdmin: event => {
+    var businessAdminId = event.currentTarget.dataset.adminId
+    var businessAdminStatus = 2
+    wx.showModal({
+      title: '确认删除',
+      content: '',
+      success: res => {
+        if (res.confirm){
+          wx.request({
+            url: backendUrl +"/business/updateBusinessAdmin",
+            method: "POST",
+            header: {"content-type":"application/x-www-form-urlencoded"},
+            data: p,
+            success: res => {
+              if (res.data.code == 1) {
+                wx.showToast({
+                  title: "删除成功",
+                  icon: 'success'
+                })
+              }
+            }
+          })
+        }
+      }
+    })
   },
 
   /**

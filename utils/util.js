@@ -8,6 +8,9 @@ const formatTime = date => {
 
   return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
 }
+const isNotEmpty = v => {
+  return v !== undefined && v !== null && v != ''
+}
 
 const formatNumber = n => {
   n = n.toString()
@@ -15,5 +18,6 @@ const formatNumber = n => {
 }
 
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  isNotEmpty: isNotEmpty
 }

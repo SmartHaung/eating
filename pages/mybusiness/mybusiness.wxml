@@ -1,10 +1,22 @@
 <view class='container'>
   <view wx:for="{{busiArray}}" wx:for-index="idx" wx:for-item="item">
     <text>{{item.businessInfoEntity.businessInfoName}}</text>
-    <button type='primary'> 进入 </button>
+    <button type='primary' bindtap='toCallqueuelist'
+      data-business-id='{{item.businessInfoEntity.businessInfoName}}'
+      data-business-uniqueid='{{item.businessInfoEntity.businessInfoUniqueId}}'>
+      进入
+    </button>
     <view wx:if="{{item.businessAdminRole==1}}">
-      <button type="primary" size="mini" bindtap='toWxacode'> 二维码 </button>
-      <button type="primary" size="mini"> 店员管理 </button>
+      <button type="primary" size="mini" bindtap='toWxacode'
+        data-business-id='{{item.businessInfoEntity.businessInfoName}}'
+        data-business-uniqueid='{{item.businessInfoEntity.businessInfoUniqueId}}'>
+        二维码
+      </button>
+      <button type="primary" size="mini" bindtap='toAdmin'
+        data-business-id='{{item.businessInfoEntity.businessInfoName}}'
+        data-business-uniqueid='{{item.businessInfoEntity.businessInfoUniqueId}}'>
+        店员管理
+      </button>
     </view>
   </view>
 </view>
