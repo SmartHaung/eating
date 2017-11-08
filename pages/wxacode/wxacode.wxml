@@ -5,13 +5,13 @@
   </view>
   <view class="{{selected?'show':'hidden'}}">
     <view class='container'>
-      <image src='{{queue}}'></image>
+      <image src='{{queue}}' mode="aspectFit"></image>
       <button size="mini" type="primary" bindtap='download' data-url='{{queue}}'>保存到本地 </button>
     </view>
   </view>
   <view class="{{selected1?'show':'hidden'}}">
     <view class='container'>
-      <image src='{{business}}'></image>
+      <image src='{{business}}' mode="aspectFit"></image>
       <button size="mini" type="primary" bindtap='download' data-url='{{business}}'>保存到本地 </button>
     </view>
   </view>
