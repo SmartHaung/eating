@@ -8,17 +8,17 @@
     <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
       <view class="td" style='width:30%'>{{item.businessInfoEntity.businessInfoName}}</view>
       <view class="td" style='width:70%'>
-        <button size="mini" type="default" bindtap='toCallqueuelist' data-business-id='{{item.businessInfoEntity.businessInfoName}}' data-business-uniqueid='{{item.businessInfoEntity.businessInfoUniqueId}}' wx:if="{{item.businessAdminRole==1}}">叫号 </button>
-        <button size="mini" type="primary" bindtap='toWxacode' data-business-id='{{item.businessInfoEntity.businessInfoName}}' data-business-uniqueid='{{item.businessInfoEntity.businessInfoUniqueId}}' wx:if="{{item.businessAdminRole==1}}">叫号�</button>
-        <button size="mini" type="warn" bindtap='toAdmin' data-business-id='{{item.businessInfoEntity.businessInfoName}}' data-business-uniqueid='{{item.businessInfoEntity.businessInfoUniqueId}}'>管理 </button>
+        <button size="mini" type="default" bindtap='toCallqueuelist' data-business-id='{{item.businessInfoEntity.businessInfoName}}' data-business-uniqueid='{{item.businessInfoEntity.businessInfoUniqueId}}'>叫号 </button>
+        <button size="mini" type="primary" bindtap='toWxacode' data-business-id='{{item.businessInfoEntity.businessInfoName}}' data-business-uniqueid='{{item.businessInfoEntity.businessInfoUniqueId}}' wx:if="{{item.businessAdminRole==1}}">二维�</button>
+        <button size="mini" type="warn" bindtap='toAdmin' data-business-id='{{item.businessInfoEntity.businessInfoName}}' data-business-uniqueid='{{item.businessInfoEntity.businessInfoUniqueId}}' wx:if="{{item.businessAdminRole==1}}">管理 </button>
       </view>
     </view>
     <view class="tr" wx:else>
       <view class="td" style='width:30%'>{{item.businessInfoEntity.businessInfoName}}</view>
       <view class="td" style='width:70%'>
-        <button size="mini" type="default" bindtap='toCallqueuelist' data-business-id='{{item.businessInfoEntity.businessInfoName}}' data-business-uniqueid='{{item.businessInfoEntity.businessInfoUniqueId}}' wx:if="{{item.businessAdminRole==1}}">叫号 </button>
-        <button size="mini" type="primary" bindtap='toWxacode' data-business-id='{{item.businessInfoEntity.businessInfoName}}' data-business-uniqueid='{{item.businessInfoEntity.businessInfoUniqueId}}' wx:if="{{item.businessAdminRole==1}}">叫号�</button>
-        <button size="mini" type="warn" bindtap='toAdmin' data-business-id='{{item.businessInfoEntity.businessInfoName}}' data-business-uniqueid='{{item.businessInfoEntity.businessInfoUniqueId}}'>管理 </button>
+        <button size="mini" type="default" bindtap='toCallqueuelist' data-business-id='{{item.businessInfoEntity.businessInfoName}}' data-business-uniqueid='{{item.businessInfoEntity.businessInfoUniqueId}}'>叫号 </button>
+        <button size="mini" type="primary" bindtap='toWxacode' data-business-id='{{item.businessInfoEntity.businessInfoName}}' data-business-uniqueid='{{item.businessInfoEntity.businessInfoUniqueId}}' wx:if="{{item.businessAdminRole==1}}">二维�</button>
+        <button size="mini" type="warn" bindtap='toAdmin' data-business-id='{{item.businessInfoEntity.businessInfoName}}' data-business-uniqueid='{{item.businessInfoEntity.businessInfoUniqueId}}' wx:if="{{item.businessAdminRole==1}}">管理 </button>
       </view>
     </view>
   </block>
