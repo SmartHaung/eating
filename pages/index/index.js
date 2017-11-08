@@ -5,7 +5,7 @@ const backendUrl = app.globalData.backendUrl
 var globaldata = getApp().globalData
 
 Page({
-  onLoad: function (options) {
+  onLoad: function (options) { 
     var scene = decodeURIComponent(options.scene)
     if (scene) {
       var sceneArray = scene.split("_");
@@ -43,6 +43,12 @@ Page({
         }
       }
     }
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
     wx.showModal({
       title: '欢迎',
       content: '请选择你的身份',
@@ -60,5 +66,5 @@ Page({
         }
       }
     })
-  }
+  },
 })
