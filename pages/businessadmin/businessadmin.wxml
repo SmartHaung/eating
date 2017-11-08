@@ -1,11 +1,28 @@
-<view class='container'>
-  <view wx:for="{{adminArray}}" wx:for-index="idx" wx:for-item="item" wx:if="{{item.businessAdminRole==2 && item.businessAdminStatus==1}}">
-    <text>{{item.businessAdminNickname}}</text>
-    <button type="warn" size="mini" bindlongpress='deleteAdmin'
-      data-admin-id='{{item.businessAdminId}}'>
-      删除
-    </button>
+<view class="table">
+  <view class="tr bg-w">
+    <view class="th" style='width:30%'>管理员昵称</view>
+    <view class="th" style='width:70%'>操作</view>
   </view>
+  <block wx:for="{{adminArray}}">
+    <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+      <view class="td" style='width:30%'>{{item.businessAdminNickname}}</view>
+      <view class="td" style='width:70%'>
+        <button type="warn" size="mini" bindlongpress='deleteAdmin' data-admin-id='{{item.businessAdminId}}'>
+          删除
+        </button>
+      </view>
+    </view>
+    <view class="tr" wx:else>
+      <view class="td" style='width:30%'>{{item.businessAdminNickname}}</view>
+      <view class="td" style='width:70%'>
+        <button type="warn" size="mini" bindlongpress='deleteAdmin' data-admin-id='{{item.businessAdminId}}'>
+          删除
+        </button>
+      </view>
+    </view>
+  </block>
+</view>
+<view class='container'>
   <view>
     <button type='warn' size='default' bindlongpress="deleteBusiness">删除门店</button>
   </view>
