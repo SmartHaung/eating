@@ -2,9 +2,9 @@
   <navigator open-type='navigate' url='../callqueue/callqueue?businessId=2&businessUniqueId=dc30c'>
     for transaction test
   </navigator>
-  <navigator open-type='navigate' url='../mybusiness/mybusiness'>鍟嗗绠＄悊娴嬭瘯</navigator>
-  <navigator open-type='navigate' url='../businessenroll/businessenroll'>娉ㄥ唽闂ㄥ簵娴嬭瘯</navigator>
-  <navigator open-type='navigate' url='../callqueue/callqueue?businessId=2&businessUniqueId=dc30c'>瀹㈡埛鍙彿</navigator>
-  <navigator open-type='navigate' url='../callqueuelist/callqueuelist?businessId=2'>鍟嗗鍙彿鍒楄〃</navigator>
-  <navigator open-type='navigate' url='../callqueuelist/callqueuelist'>鐢ㄦ埛鍙彿鍒楄〃</navigator>
+  <navigator open-type='navigate' url='../mybusiness/mybusiness'>商家管理测试</navigator>
+  <navigator open-type='navigate' url='../businessenroll/businessenroll'>注册门店测试</navigator>
+  <navigator open-type='navigate' url='../callqueue/callqueue?businessId=2&businessUniqueId=dc30c'>客户叫号</navigator>
+  <navigator open-type='navigate' url='../callqueuelist/callqueuelist?businessId=2'>商家叫号列表</navigator>
+  <navigator open-type='navigate' url='../callqueuelist/callqueuelist'>用户叫号列表</navigator>
 </view>
