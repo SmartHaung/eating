@@ -15,7 +15,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(getApp())
     var that = this
     wx.request({
       url: backendUrl +"/business/businessadminbyunionId",
@@ -74,7 +73,18 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+    var that = this
+    wx.request({
+      url: backendUrl + "/business/businessadminbyunionId",
+      data: { unionId: app.globalData.unionId },
+      success: res => {
+        if (res.data.code == 1) {
+          that.setData({
+            busiArray: res.data.data
+          })
+        }
+      }
+    })
   },
 
   /**
