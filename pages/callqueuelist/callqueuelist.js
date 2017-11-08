@@ -52,7 +52,7 @@ Page({
         data: {
           callqueueHandlelogCallqueueid: event.target.dataset.callqueueid,
           callqueueHandlelogCreateuserUnionid: user.unionId,
-          callqueueHandlelogStatus: event.target.dataset.type
+          callQueueStatus: event.target.dataset.type
         },
         success: function (res) {
           var title = ""
@@ -71,6 +71,5 @@ Page({
         }
       })
     }
-
   }
 })
