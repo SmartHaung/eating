@@ -14,7 +14,6 @@ App({
           data: {code: res.code},
           success: r => {
             var map = r.data.data
-            debugger
             this.globalData.openId = map.openId
             this.globalData.unionId = map.unionId
           }

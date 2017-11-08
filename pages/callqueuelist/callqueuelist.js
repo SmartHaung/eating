@@ -1,3 +1,6 @@
+var backendUrl = getApp().globalData.backendUrl
+var user = getApp().globalData
+
 //index.js
 //获取应用实例
 const app = getApp()
@@ -6,17 +9,21 @@ Page({
     listData: [
     ],
     isBusiness: false,
-    isCustomer: false
+    isCustomer: false,
+    businessId: null
   },
   onLoad: function (options) {
-    var backendUrl = getApp().globalData.backendUrl
+    this.setData({ businessId: options.businessId });
+    this.queryCallqueue();
+  },
+  queryCallqueue() {
     var requestData = {};
-    if (options.businessId) {
-      requestData.callqueueBusinessId = options.businessId;
+    if (this.data.businessId) {
+      requestData.callqueueBusinessId = this.data.businessId;
       this.setData({ isBusiness: true });
     }
     else {
-      requestData.callqueueCreateuserUnionid = getApp().globalData.unionId;
+      requestData.callqueueCreateuserUnionid = user.unionId;
       this.setData({ isCustomer: true });
     }
     var that = this;
@@ -38,7 +45,32 @@ Page({
     })
   },
   updateCallqueue: function (event) {
+    var that = this;
+    if (this.data.isBusiness) {
+      wx.request({
+        url: backendUrl + '/callqueue/handle',
+        data: {
+          callqueueHandlelogCallqueueid: event.target.dataset.callqueueid,
+          callqueueHandlelogCreateuserUnionid: user.unionId,
+          callqueueHandlelogStatus: event.target.dataset.type
+        },
+        success: function (res) {
+          var title = ""
+          if (res && res.data && res.data.code == 1) {
+            that.queryCallqueue();
+            wx.showToast({
+              title: "叫号成功",
+              duration: 2000
+            })
+          } else {
+            wx.showToast({
+              title: "操作失败",
+              duration: 2000
+            })
+          }
+        }
+      })
+    }
 
-    
   }
 })
