@@ -75,7 +75,6 @@ Page({
       })
       return false
     }
-    debugger
     businessInfo.businessInfoCreateUserUnionId = app.globalData.unionId
     businessInfo.nickName = globaldata.userInfo.nickName
     wx.request({
