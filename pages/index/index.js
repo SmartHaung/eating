@@ -30,7 +30,7 @@ Page({
                 })
               } else {
                 wx.showToast({
-                  title: "添加管理员失�,
+                  title: "添加管理员失败",
                   icon: 'success',
                   duration: 2000
                 })
