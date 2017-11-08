@@ -3,7 +3,6 @@
 const app = getApp()
 const backendUrl = app.globalData.backendUrl
 const util = require("../../utils/util.js")
-var user = getApp().globalData
 
 Page({
   /**
@@ -76,7 +75,7 @@ Page({
       return false
     }
     businessInfo.businessInfoCreateUserUnionId = app.globalData.unionId
-    businessInfo.nickName = user.nickName
+    businessInfo.nickName = app.globalData.userInfo.nickName
     wx.request({
       url: backendUrl + "/business/create",
       method: "POST",
@@ -95,7 +94,6 @@ Page({
           showCancel: false,
           complete: () => {
             if (res.data.code == 1) {
-
               wx.request({
                 url: backendUrl + "/business/businessadminbyunionId",
                 data: { unionId: app.globalData.unionId },
