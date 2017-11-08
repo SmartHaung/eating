@@ -1,7 +1,5 @@
 <view class="container">
-  <navigator open-type='navigate' url='../mybusiness/mybusiness'>商家管理测试</navigator>
-  <navigator open-type='navigate' url='../callqueue/callqueue?businessId=2&businessUniqueId=dc30c'>客户叫号</navigator>
-  <navigator open-type='navigate' url='../callqueuelist/callqueuelist?businessId=2'>商家叫号列表</navigator>
-  <navigator open-type='navigate' url='../callqueuelist/callqueuelist'>用户叫号列表</navigator>
-  <navigator open-type='navigate' url='../index/index?scene='></navigator>
+  <navigator open-type='navigate' url='../index/index'>通过搜索小程序进入</navigator>
+  <navigator open-type='navigate' url='../index/index?scene=que_e9ebb_1'>扫店铺叫号二维码进入</navigator>
+  <navigator open-type='navigate' url='../index/index?scene=bus_e9ebb_1'>扫管理员二维码</navigator>
 </view>
