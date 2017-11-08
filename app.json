@@ -1,9 +1,8 @@
 {
   "pages": [
-    "pages/test/test",
     "pages/index/index",
+    "pages/test/test",
     "pages/mybusiness/mybusiness",
-    "pages/businessenroll/businessenroll",
     "pages/businessadmin/businessadmin",
     "pages/wxacode/wxacode",
     "pages/logs/logs",
