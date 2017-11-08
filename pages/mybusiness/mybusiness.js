@@ -7,7 +7,7 @@ var globaldata = getApp().globalData
 
 Page({
   /**
-   * 页面的初始数据
+   * 页面的初始数�
    */
   data: {
     busiArray: null
@@ -32,7 +32,7 @@ Page({
   },
 
   /**
-   * 前往查看二维码页面
+   * 前往查看二维码页�
    */
   toWxacode: event => {
     var businessId = event.currentTarget.dataset.businessId
@@ -70,7 +70,7 @@ Page({
     var notEmpty = util.isNotEmpty(businessInfo.businessInfoName)
     if (!notEmpty) {
       wx.showModal({
-        title: "请填写商店名称",
+        title: "请填写商店名�,
         showCancel: false
       })
       return false
@@ -163,14 +163,14 @@ Page({
   },
 
   /**
-   * 页面上拉触底事件的处理函数
+   * 页面上拉触底事件的处理函�
    */
   onReachBottom: function () {
 
   },
 
   /**
-   * 用户点击右上角分享
+   * 用户点击右上角分�
    */
   onShareAppMessage: function () {
 

@@ -17,7 +17,12 @@ Page({
         } else if (sceneArray[0] == "bus") {
           wx.request({
             url: backendUrl + '/business/adminadd',
-            data: { businessAdminBusinessid: sceneArray[2], businessAdminRole: 2, businessAdminUnionid: globaldata.unionId },
+            data: {
+              businessAdminBusinessid: sceneArray[2],
+              businessAdminRole: 2,
+              businessAdminUnionid: user.unionId,
+              businessAdminNickname: app.globalData.userInfo.nickName
+            },
             success: function (res) {
               if (res && res.data && res.data.code == 1) {
                 wx.navigateTo({
@@ -25,7 +30,7 @@ Page({
                 })
               } else {
                 wx.showToast({
-                  title: "添加管理员失败",
+                  title: "添加管理员失�,
                   icon: 'success',
                   duration: 2000
                 })
