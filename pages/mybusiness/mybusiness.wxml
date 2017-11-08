@@ -1,22 +1,25 @@
-<view class='container'>
-  <view wx:for="{{busiArray}}" wx:for-index="idx" wx:for-item="item">
-    <text>{{item.businessInfoEntity.businessInfoName}}</text>
-    <button type='primary' bindtap='toCallqueuelist'
+<view class="table">
+  <view class="tr bg-w">
+    <view class="th" style='width:30%'>店铺名称</view>
+    <view class="th" style='width:70%'>操作</view>
       data-business-id='{{item.businessInfoEntity.businessInfoId}}'
-      data-business-uniqueid='{{item.businessInfoEntity.businessInfoUniqueId}}'>
-      进入
-    </button>
-    <view wx:if="{{item.businessAdminRole==1}}">
-      <button type="primary" size="mini" bindtap='toWxacode'
-        data-business-id='{{item.businessInfoEntity.businessInfoId}}'
-        data-business-uniqueid='{{item.businessInfoEntity.businessInfoUniqueId}}'>
-        二维码
-      </button>
-      <button type="primary" size="mini" bindtap='toAdmin'
-        data-business-id='{{item.businessInfoEntity.businessInfoId}}'
-        data-business-uniqueid='{{item.businessInfoEntity.businessInfoUniqueId}}'>
-        店员管理
-      </button>
-    </view>
   </view>
+  <block wx:for="{{busiArray}}">
+    <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+      <view class="td" style='width:30%'>{{item.businessInfoEntity.businessInfoName}}</view>
+      <view class="td" style='width:70%'>
+        <button size="mini" type="default" bindtap='toCallqueuelist' data-business-id='{{item.businessInfoEntity.businessInfoName}}' data-business-uniqueid='{{item.businessInfoEntity.businessInfoUniqueId}}' wx:if="{{item.businessAdminRole==1}}">叫号 </button>
+        <button size="mini" type="primary" bindtap='toWxacode' data-business-id='{{item.businessInfoEntity.businessInfoName}}' data-business-uniqueid='{{item.businessInfoEntity.businessInfoUniqueId}}' wx:if="{{item.businessAdminRole==1}}">叫号�</button>
+        <button size="mini" type="warn" bindtap='toAdmin' data-business-id='{{item.businessInfoEntity.businessInfoName}}' data-business-uniqueid='{{item.businessInfoEntity.businessInfoUniqueId}}'>管理 </button>
+      </view>
+    </view>
+    <view class="tr" wx:else>
+      <view class="td" style='width:30%'>{{item.businessInfoEntity.businessInfoName}}</view>
+      <view class="td" style='width:70%'>
+        <button size="mini" type="default" bindtap='toCallqueuelist' data-business-id='{{item.businessInfoEntity.businessInfoName}}' data-business-uniqueid='{{item.businessInfoEntity.businessInfoUniqueId}}' wx:if="{{item.businessAdminRole==1}}">叫号 </button>
+        <button size="mini" type="primary" bindtap='toWxacode' data-business-id='{{item.businessInfoEntity.businessInfoName}}' data-business-uniqueid='{{item.businessInfoEntity.businessInfoUniqueId}}' wx:if="{{item.businessAdminRole==1}}">叫号�</button>
+        <button size="mini" type="warn" bindtap='toAdmin' data-business-id='{{item.businessInfoEntity.businessInfoName}}' data-business-uniqueid='{{item.businessInfoEntity.businessInfoUniqueId}}'>管理 </button>
+      </view>
+    </view>
+  </block>
 </view>

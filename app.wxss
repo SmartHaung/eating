@@ -1,4 +1,5 @@
 /**app.wxss**/
+
 .container {
   height: 100%;
   display: flex;
@@ -7,4 +8,38 @@
   justify-content: space-between;
   padding: 200rpx 0;
   box-sizing: border-box;
-} 
+}
+
+.table {
+  border: 0px solid darkgray;
+}
+
+.tr {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 3rem;
+  align-items: center;
+}
+
+.td {
+  justify-content: center;
+  text-align: center;
+}
+
+.bg-w {
+  background: snow;
+}
+
+.bg-g {
+  background: #e6f3f9;
+}
+
+.th {
+  justify-content: center;
+  background: lightblue;
+  color: #fff;
+  display: flex;
+  height: 3rem;
+  align-items: center;
+}

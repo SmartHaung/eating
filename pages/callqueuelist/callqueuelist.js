@@ -46,30 +46,30 @@ Page({
   },
   updateCallqueue: function (event) {
     var that = this;
-    if (this.data.isBusiness) {
-      wx.request({
-        url: backendUrl + '/callqueue/handle',
-        data: {
-          callqueueHandlelogCallqueueid: event.target.dataset.callqueueid,
-          callqueueHandlelogCreateuserUnionid: user.unionId,
-          callQueueStatus: event.target.dataset.type
-        },
-        success: function (res) {
-          var title = ""
-          if (res && res.data && res.data.code == 1) {
-            that.queryCallqueue();
-            wx.showToast({
-              title: "叫号成功",
-              duration: 2000
-            })
-          } else {
-            wx.showToast({
-              title: "操作失败",
-              duration: 2000
-            })
-          }
+    wx.request({
+      url: backendUrl + '/callqueue/handle',
+      data: {
+        callqueueHandlelogCallqueueid: event.target.dataset.callqueueid,
+        callqueueHandlelogCreateuserUnionid: user.unionId,
+        callQueueStatus: event.target.dataset.type,
+        type: this.data.isBusiness ? 1 : 2
+      },
+      success: function (res) {
+        var title = ""
+        if (res && res.data && res.data.code == 1) {
+          that.queryCallqueue();
+          wx.showToast({
+            title: "操作成功",
+            duration: 2000
+          })
+        } else {
+          wx.showToast({
+            title: "操作失败",
+            duration: 2000
+          })
         }
-      })
-    }
+      }
+    })
   }
+
 })
