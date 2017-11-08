@@ -7,7 +7,7 @@
     <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
       <view class="td" style='width:30%'>{{item.businessAdminNickname}}</view>
       <view class="td" style='width:70%'>
-        <button type="warn" size="mini" bindlongpress='deleteAdmin' data-admin-id='{{item.businessAdminId}}'>
+        <button type="warn" size="mini" bindlongpress='deleteAdmin' wx:if="{{item.businessAdminRole!=1}}" data-admin-id='{{item.businessAdminId}}'>
           删除
         </button>
       </view>
@@ -15,7 +15,7 @@
     <view class="tr" wx:else>
       <view class="td" style='width:30%'>{{item.businessAdminNickname}}</view>
       <view class="td" style='width:70%'>
-        <button type="warn" size="mini" bindlongpress='deleteAdmin' data-admin-id='{{item.businessAdminId}}'>
+        <button type="warn" size="mini" bindlongpress='deleteAdmin' wx:if="{{item.businessAdminRole!=1}}" data-admin-id='{{item.businessAdminId}}'>
           删除
         </button>
       </view>
