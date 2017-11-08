@@ -1,4 +1,4 @@
-<view class="container">
+﻿<view class="container">
   <navigator open-type='navigate' url='../callqueue/callqueue?businessId=2&businessUniqueId=dc30c'>
     for transaction test
   </navigator>
