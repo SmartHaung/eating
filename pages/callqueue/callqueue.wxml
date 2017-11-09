@@ -6,7 +6,7 @@
 <form bindsubmit="formSubmit" bindreset="formReset" report-submit="true">
   <view class="flex-row tr" style="display:flex;">
     <view class="flex-view-item">
-      <input placeholder="请输入订单号" bindinput="orderInput" auto-focus></input>
+      <input placeholder="请输入订单号" bindinput="orderInput"></input>
     </view>
     <view class="flex-view-item">
       <button size="mini" type="primary" bindtap='createCallQueue' formType="submit">提交 </button>

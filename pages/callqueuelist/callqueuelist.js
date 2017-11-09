@@ -15,6 +15,7 @@ Page({
   onLoad: function (options) {
     this.setData({ businessId: options.businessId });
     this.queryCallqueue();
+    setInterval(this.queryCallqueue, 10000)
   },
   queryCallqueue() {
     var requestData = {};
