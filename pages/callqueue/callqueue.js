@@ -25,31 +25,40 @@ Page({
   createCallQueue: function () {
     this.data.noticeCount--;
     this.setData({ noticeCount: this.data.noticeCount })
-    wx.request({
-      url: backendUrl + '/consumer/addcallrequest',
-      data: {
-        callqueueBusinessId: this.data.businessId,
-        callqueueOrderid: this.data.orderId,
-        callqueueCreateuserUnionid: user.unionId,
-        callqueueFormids: this.data.callqueueFormids,
-        callqueueCreateuserOpenid: user.openId,
-        businessUniqueId: this.data.businessUniqueId
-      },
-      success: function (res) {
-        if (res && res.data && res.data.code == 1) {
-          wx.navigateTo({
-            url: '../callqueuelist/callqueuelist'
-          })
-        } else {
-          wx.showToast({
-            title: "提交失败",
-            icon: 'success',
-            duration: 2000
-          })
-        }
-
-      }
+    var that = this;
+    wx.showToast({
+      title: "提交中",
+      icon: 'loading',
+      duration: 500
     })
+    setTimeout(function () {
+      wx.request({
+        url: backendUrl + '/consumer/addcallrequest',
+        data: {
+          callqueueBusinessId: that.data.businessId,
+          callqueueOrderid: that.data.orderId,
+          callqueueCreateuserUnionid: user.unionId,
+          callqueueFormids: that.data.callqueueFormids,
+          callqueueCreateuserOpenid: user.openId,
+          businessUniqueId: that.data.businessUniqueId
+        },
+        success: function (res) {
+          if (res && res.data && res.data.code == 1) {
+            wx.navigateTo({
+              url: '../callqueuelist/callqueuelist'
+            })
+          } else {
+            wx.showToast({
+              title: "提交失败",
+              icon: 'success',
+              duration: 2000
+            })
+          }
+
+        }
+      })
+    }, 500)
+
   },
   onLoad: function (options) {
     var that = this;
