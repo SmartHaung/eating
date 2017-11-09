@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/test/test",
     "pages/index/index",
+    "pages/test/test",
     "pages/mybusiness/mybusiness",
     "pages/businessadmin/businessadmin",
     "pages/wxacode/wxacode",
