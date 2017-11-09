@@ -7,7 +7,7 @@
     <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
       <view class="td" style='width:30%'>{{item.businessAdminNickname}}</view>
       <view class="td" style='width:70%'>
-        <button type="warn" size="mini" bindlongpress='deleteAdmin' wx:if="{{item.businessAdminRole!=1}}" data-admin-id='{{item.businessAdminId}}'>
+        <button type="warn" size="mini" bindtap='deleteAdmin' wx:if="{{item.businessAdminRole!=1}}" data-admin-id='{{item.businessAdminId}}'>
           删除
         </button>
         <button type="primary" size="mini" wx:if="{{item.businessAdminRole==1}}">
@@ -18,7 +18,7 @@
     <view class="tr" wx:else>
       <view class="td" style='width:30%'>{{item.businessAdminNickname}}</view>
       <view class="td" style='width:70%'>
-        <button type="warn" size="mini" bindlongpress='deleteAdmin' wx:if="{{item.businessAdminRole!=1}}" data-admin-id='{{item.businessAdminId}}'>
+        <button type="warn" size="mini" bindtap='deleteAdmin' wx:if="{{item.businessAdminRole!=1}}" data-admin-id='{{item.businessAdminId}}'>
           删除
         </button>
         <button type="primary" size="mini" wx:if="{{item.businessAdminRole==1}}">
@@ -30,7 +30,6 @@
 </view>
 <view class='container'>
   <view>
-    <button type='warn' size='default' bindlongpress="deleteBusiness">删除门店</button>
+    <button type='warn' size='default' bindtap="deleteBusiness">删除门店</button>
   </view>
-  <text>长按进行删除操作</text>
 </view>

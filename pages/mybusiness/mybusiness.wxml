@@ -4,7 +4,7 @@
       商家注册：
     </view>
     <view class="flex-view-item">
-      <input placeholder="请输入商家名称" name="businessInfoName" auto-focus></input>
+      <input placeholder="请输入商家名称" name="businessInfoName"></input>
     </view>
     <view class="flex-view-item">
       <button size="mini" type="primary" formType="submit">注册 </button>

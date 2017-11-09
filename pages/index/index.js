@@ -17,30 +17,36 @@ Page({
             url: '../callqueue/callqueue?businessId=' + sceneArray[2] + '&businessUniqueId=' + sceneArray[1]
           })
         } else if (sceneArray[0] == "bus") {
-          wx.request({
-            url: backendUrl + '/business/adminadd',
-            data: {
-              businessAdminBusinessid: sceneArray[2],
-              businessAdminRole: 2,
-              businessAdminUnionid: app.globalData.unionId,
-              businessAdminNickname: app.globalData.userInfo.nickName
-            },
+          wx.showModal({
+            title: '欢迎',
+            content: '欢迎使用吃饭啦管理系统',
+            showCancel: false,
             success: function (res) {
-              if (res && res.data && res.data.code == 1) {
-                wx.navigateTo({
-                  url: '../mybusiness/mybusiness'
-                })
-              } else {
-                wx.showToast({
-                  title: "添加管理员失败",
-                  icon: 'success',
-                  duration: 2000
+              if (res.confirm) {
+                wx.request({
+                  url: backendUrl + '/business/adminadd',
+                  data: {
+                    businessAdminBusinessid: sceneArray[2],
+                    businessAdminRole: 2,
+                    businessAdminUnionid: app.globalData.unionId,
+                    businessAdminNickname: app.globalData.userInfo.nickName
+                  },
+                  success: function (res) {
+                    if (res && res.data && res.data.code == 1) {
+                      wx.navigateTo({
+                        url: '../mybusiness/mybusiness'
+                      })
+                    } else {
+                      wx.showToast({
+                        title: "添加管理员失败",
+                        icon: 'success',
+                        duration: 2000
+                      })
+                    }
+                  }
                 })
               }
             }
-          })
-          wx.navigateTo({
-            url: '../mybusiness/mybusiness'
           })
         }
       }
