@@ -6,7 +6,6 @@ var globaldata = getApp().globalData
 
 Page({
   onLoad: function (options) {
-
     var flag = true;
     var scene = decodeURIComponent(options.scene)
     if (scene && scene != "undefined") {
@@ -14,7 +13,7 @@ Page({
       if (scene && scene.length >= 3) {
         flag = false;
         if (sceneArray[0] == "que") {
-          wx.redirectTo({
+          wx.navigateTo({
             url: '../callqueue/callqueue?businessId=' + sceneArray[2] + '&businessUniqueId=' + sceneArray[1]
           })
         } else if (sceneArray[0] == "bus") {
@@ -34,7 +33,7 @@ Page({
                   },
                   success: function (res) {
                     if (res && res.data && res.data.code == 1) {
-                      wx.redirectTo({
+                      wx.navigateTo({
                         url: '../mybusiness/mybusiness'
                       })
                     } else {
@@ -60,11 +59,11 @@ Page({
         confirmText: '我是顾客',
         success: function (res) {
           if (res.confirm) {
-            wx.redirectTo({
+            wx.navigateTo({
               url: '../callqueuelist/callqueuelist'
             })
           } else if (res.cancel) {
-            wx.redirectTo({
+            wx.navigateTo({
               url: '../mybusiness/mybusiness'
             })
           }
