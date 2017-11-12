@@ -60,7 +60,7 @@ Page({
     var businessId = event.currentTarget.dataset.businessId
     var businessUniqueid = event.currentTarget.dataset.businessUniqueid
     wx.navigateTo({
-      url: '../callqueuelist/callqueuelist?businessId=' + businessId + "&businessUniqueid=" + businessUniqueid,
+      url: '../callqueuelistbusiness/callqueuelistbusiness?businessId=' + businessId + "&businessUniqueid=" + businessUniqueid,
     })
   },
 

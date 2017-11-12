@@ -45,7 +45,7 @@ Page({
         success: function (res) {
           if (res && res.data && res.data.code == 1) {
             wx.switchTab({
-              url: '../callqueuelist/callqueuelist'
+              url: '../callqueuelistcustomer/callqueuelistcustomer'
             })
           } else {
             wx.showToast({

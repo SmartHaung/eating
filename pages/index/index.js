@@ -61,7 +61,7 @@ Page({
         success: function (res) {
           if (res.confirm) {
             wx.switchTab({
-              url: '../callqueuelist/callqueuelist'
+              url: '../callqueuelistcustomer/callqueuelistcustomer'
             })
           } else if (res.cancel) {
             wx.switchTab({

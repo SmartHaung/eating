@@ -1,13 +1,13 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/test/test",
     "pages/mybusiness/mybusiness",
     "pages/businessadmin/businessadmin",
     "pages/wxacode/wxacode",
     "pages/logs/logs",
     "pages/callqueue/callqueue",
-    "pages/callqueuelist/callqueuelist"
+    "pages/callqueuelistcustomer/callqueuelistcustomer",
+    "pages/callqueuelistbusiness/callqueuelistbusiness"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -35,7 +35,7 @@
       {
         "selectedIconPath": "images/customer.png",
         "iconPath": "images/customer.png",
-        "pagePath": "pages/callqueuelist/callqueuelist",
+        "pagePath": "pages/callqueuelistcustomer/callqueuelistcustomer",
         "text": "顾客"
       }
     ]
