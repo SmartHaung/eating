@@ -14,5 +14,30 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "吃饭啦",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#11cd6e",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "images/index.png",
+        "iconPath": "images/index.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "images/business.png",
+        "iconPath": "images/business.png",
+        "pagePath": "pages/mybusiness/mybusiness",
+        "text": "商家"
+      },
+      {
+        "selectedIconPath": "images/customer.png",
+        "iconPath": "images/customer.png",
+        "pagePath": "pages/callqueuelist/callqueuelist",
+        "text": "顾客"
+      }
+    ]
   }
 }
