@@ -29,7 +29,9 @@
   </block>
 </view>
 <view class='container'>
-  <view>
-    <button type='warn' size='default' bindtap="deleteBusiness">删除门店</button>
+  <view class="tr">
+    <view class="td" style='width:50%'>
+      <button type='warn' size='mini' bindtap="deleteBusiness">删除门店</button>
+    </view>
   </view>
 </view>
