@@ -9,15 +9,16 @@ Page({
 
     var flag = true;
     var scene = decodeURIComponent(options.scene)
+    scene = "login_test"
     if (scene && scene != "undefined") {
       var sceneArray = scene.split("_");
-      if (scene && scene.length >= 3) {
+      if (scene && scene.length >= 2) {
         flag = false;
-        if (sceneArray[0] == "que") {
+        if (sceneArray[0] == "que" && scene.length >= 3) {
           wx.navigateTo({
             url: '../callqueue/callqueue?businessId=' + sceneArray[2] + '&businessUniqueId=' + sceneArray[1]
           })
-        } else if (sceneArray[0] == "bus") {
+        } else if (sceneArray[0] == "bus" && scene.length >= 3) {
           wx.showModal({
             title: '欢迎',
             content: '欢迎使用吃饭啦管理系统',
@@ -49,7 +50,41 @@ Page({
               }
             }
           })
+        } else if (sceneArray[0] == "login") {
+          wx.showModal({
+            title: '欢迎',
+            content: '你确定要登录吃饭了网页管理后台码？',
+            confirmText: '确定',
+            success: function (res) {
+              if (res.confirm) {
+                wx.request({
+                  url: backendUrl + '/user/setLoginUserInfo',
+                  data: {
+                    key: sceneArray[1],
+                    value: JSON.stringify(app.globalData),
+                  },
+                  success: function (res) {
+                    if (res && res.data && res.data.code == 1) {
+                      wx.showToast({
+                        title: "授权成功，请稍等",
+                        icon: 'success',
+                        duration: 2000
+                      })
+                    } else {
+                      wx.showToast({
+                        title: "授权失败",
+                        icon: 'success',
+                        duration: 2000
+                      })
+                    }
+                  }
+                })
+              } else if (res.cancel) {
+              }
+            }
+          })
         }
+
       }
     }
     if (flag) {
