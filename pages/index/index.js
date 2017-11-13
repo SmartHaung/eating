@@ -9,7 +9,6 @@ Page({
 
     var flag = true;
     var scene = decodeURIComponent(options.scene)
-    scene = "login_test"
     if (scene && scene != "undefined") {
       var sceneArray = scene.split("_");
       if (scene && scene.length >= 2) {
