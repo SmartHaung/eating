@@ -7,7 +7,8 @@
     "pages/logs/logs",
     "pages/callqueue/callqueue",
     "pages/callqueuelistcustomer/callqueuelistcustomer",
-    "pages/callqueuelistbusiness/callqueuelistbusiness"
+    "pages/callqueuelistbusiness/callqueuelistbusiness",
+    "pages/illustration/illustration"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -37,6 +38,12 @@
         "iconPath": "images/customer.png",
         "pagePath": "pages/callqueuelistcustomer/callqueuelistcustomer",
         "text": "顾客"
+      },
+      {
+        "selectedIconPath": "images/illustration.png",
+        "iconPath": "images/illustration.png",
+        "pagePath": "pages/illustration/illustration",
+        "text": "使用说明"
       }
     ]
   }
