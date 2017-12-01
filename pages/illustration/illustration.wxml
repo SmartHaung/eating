@@ -1,33 +1,33 @@
 <view class="WViewColumn1">
-  <text class='WViewRow1'>简易使用流程</text>
+  <text class='WViewRow2'>简易使用流程</text>
   <text class='WViewRow2'>这个小程序适用于美食城等可能需要客人自主取餐的商家（本文中提到的扫描均表示使用微信扫一扫）</text>
-  <text class='WViewRow1'>一.前期准备</text>
-  <text class='WViewRow1'>1.填写店铺名称并注册</text>
-  <view>
+  <text class='WViewRow2'>一.前期准备</text>
+  <text class='WViewRow2'>1.填写店铺名称并注册</text>
+  
     <image src='../../images/illustration/ill_1.jpg' mode="aspectFit"></image>
-  </view>
+  
   <text class='WViewRow2'>2.点击上图二维码按钮,可以看到两个二维码,红色名称是当前二维码的功能。保存并打印叫号二维码,贴出来给客人扫描使用。点击“添加管理员”,让参与叫号的工作人员扫描成为管理员，店铺的申请者会自动成为管理员</text>
-  <view>
+
     <image src='../../images/illustration/ill_2.jpg' mode="aspectFit"></image>
-  </view>
-  <view>
+
+  
     <image src='../../images/illustration/ill_3.jpg' mode="aspectFit"></image>
-  </view>
-  <view>
+  
+  
     <image src='../../images/illustration/ill_4.jpg' mode="aspectFit"></image>
-  </view>
+  
   <text class='WViewRow1'> </text>
-  <text class='WViewRow1'>二.正式使用</text>
-  <text class='WViewRow1'>1.客人点餐后输入点餐内容，想要被通知的次数提交</text>
-  <view>
+  <text class='WViewRow2'>二.正式使用</text>
+  <text class='WViewRow2'>1.客人点餐后输入点餐内容，想要被通知的次数提交</text>
+  
     <image src='../../images/illustration/ill_5.jpg' mode="aspectFit"></image>
-  </view>
-  <text class='WViewRow1'>2.店铺申请者以及管理员点击叫号，可以看到客人点的菜，根据实际情况通知</text>
-  <view>
+  
+  <text class='WViewRow2'>2.店铺申请者以及管理员点击叫号，可以看到客人点的菜，根据实际情况通知</text>
+  
     <image src='../../images/illustration/ill_6.jpg' mode="aspectFit"></image>
-  </view>
-  <view>
+  
+  
     <image src='../../images/illustration/ill_7.jpg' mode="aspectFit"></image>
-  </view>
-  <text class='WViewRow1'>3.有联网电脑的商家可以打开http://www.chifanla.fun:8888，管理员扫描登陆叫号</text>
+  
+  <text class='WViewRow2'>3.有联网电脑的商家可以打开http://www.chifanla.fun:8888，管理员扫描登陆叫号</text>
 </view>
